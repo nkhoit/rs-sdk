@@ -112,10 +112,16 @@ When `SERVER` is set to a hostname (e.g. `rs-sdk-demo.fly.dev`), they connect to
 
 RS-SDK works with any MCP-compatible coding agent, not just Claude Code.
 
-### VS Code Copilot Agent Mode
-The `.vscode/mcp.json` config is already set up. In VS Code with Copilot agent mode, the MCP tools (`execute_code`, `list_bots`, `disconnect_bot`) are available automatically.
+### Copilot CLI
+The `.copilot/mcp-config.json` config is included. Copilot CLI picks it up automatically:
+```sh
+cd rs-sdk
+copilot "create a bot named mybot and chop trees until inventory is full"
+```
+Use `/mcp show` inside Copilot CLI to verify the `rs-agent` MCP server is loaded.
 
-Copilot reads `.github/copilot-instructions.md` for full SDK documentation, API reference, and game knowledge.
+### VS Code Copilot Agent Mode
+The `.vscode/mcp.json` config is also included. The MCP tools (`execute_code`, `list_bots`, `disconnect_bot`) are available automatically in agent mode.
 
 ### Any MCP Client
 Point any MCP client at the same server:
